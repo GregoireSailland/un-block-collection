@@ -1,0 +1,66 @@
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/style.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************/
+/**
+* The following styles get applied both on the front of your site
+* and in the editor.
+*
+* Replace them with your own styles or remove the file completely.
+*/
+.wp-block-create-block-un-block {
+  background-color: #21759b;
+  color: #fff;
+  padding: 2px;
+}
+
+.bg {
+  padding-bottom: 50vh;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  margin-bottom: 0 !important;
+}
+
+.bg .content-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.bg .content-wrapper .content {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 2em;
+  border-radius: 5px;
+  margin-bottom: 4%;
+}
+
+.bg .content-wrapper .content blockquote, .bg .content-wrapper .content dd, .bg .content-wrapper .content dl, .bg .content-wrapper .content dt, .bg .content-wrapper .content fieldset, .bg .content-wrapper .content figure, .bg .content-wrapper .content form, .bg .content-wrapper .content h1, .bg .content-wrapper .content h2, .bg .content-wrapper .content h3, .bg .content-wrapper .content h4, .bg .content-wrapper .content h5, .bg .content-wrapper .content h6, .bg .content-wrapper .content hr, .bg .content-wrapper .content html, .bg .content-wrapper .content iframe, .bg .content-wrapper .content legend, .bg .content-wrapper .content li, .bg .content-wrapper .content ol, .bg .content-wrapper .content p, .bg .content-wrapper .content pre, .bg .content-wrapper .content textarea, .bg .content-wrapper .content ul {
+  margin: 0 auto;
+}
+
+.bg .content .before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  filter: hue-rotate(168deg) saturate(10) grayscale(80%);
+  /*hue-rotate(45deg);*/
+  filter: grayscale(80%);
+  filter: blur(2.4px) brightness(0.8) contrast(0.4) grayscale(0.4) saturate(0.5) sepia(0.28);
+  -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, black 10%);
+  mask-image: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, black 10%);
+}
+
+/*# sourceMappingURL=style-index.css.map*/

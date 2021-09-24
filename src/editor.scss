@@ -1,0 +1,28 @@
+.popover-slot,.background-wrapper {
+	border: 1px dotted #f00;
+	padding:12px;
+	margin:12px;
+	background-color:lime;
+}
+/* .components-notice__content{display:none;} */
+
+
+
+.string { color: green; }
+.number { color: darkorange; }
+.boolean { color: blue; }
+.null { color: magenta; }
+.key { color: red; }
+
+.background-wrapper{
+	background-size:cover;
+	background-position:50% 50%;
+	background-attachment: fixed;
+}
+.background-wrapper-container{
+	background-color: rgba(255,255,255,.7);
+	max-width:50%;margin:0 auto;
+	padding: .5em 2em;
+}
+.pre{max-height:30vh;overflow:auto;}
+.edit-post-visual-editor .background-wrapper>.components-button.has-icon{background-color:#fff;}
