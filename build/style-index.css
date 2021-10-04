@@ -13,7 +13,12 @@
   padding: 2px;
 }
 
-.bg {
+.content-wrapper .content.aligncenter {
+  max-width: var(--responsive--aligndefault-width);
+}
+
+.background-wrapper {
+  position: relative;
   padding-bottom: 50vh;
   background-repeat: no-repeat;
   background-position: center center;
@@ -22,28 +27,28 @@
   margin-bottom: 0 !important;
 }
 
-.bg .content-wrapper {
+.background-wrapper .content-wrapper {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
-  z-index: 2;
+  z-index: 1;
 }
 
-.bg .content-wrapper .content {
+.background-wrapper .content-wrapper .content {
   background-color: rgba(255, 255, 255, 0.7);
   padding: 2em;
   border-radius: 5px;
   margin-bottom: 4%;
 }
 
-.bg .content-wrapper .content blockquote, .bg .content-wrapper .content dd, .bg .content-wrapper .content dl, .bg .content-wrapper .content dt, .bg .content-wrapper .content fieldset, .bg .content-wrapper .content figure, .bg .content-wrapper .content form, .bg .content-wrapper .content h1, .bg .content-wrapper .content h2, .bg .content-wrapper .content h3, .bg .content-wrapper .content h4, .bg .content-wrapper .content h5, .bg .content-wrapper .content h6, .bg .content-wrapper .content hr, .bg .content-wrapper .content html, .bg .content-wrapper .content iframe, .bg .content-wrapper .content legend, .bg .content-wrapper .content li, .bg .content-wrapper .content ol, .bg .content-wrapper .content p, .bg .content-wrapper .content pre, .bg .content-wrapper .content textarea, .bg .content-wrapper .content ul {
+.background-wrapper .content-wrapper .content blockquote, .background-wrapper .content-wrapper .content dd, .background-wrapper .content-wrapper .content dl, .background-wrapper .content-wrapper .content dt, .background-wrapper .content-wrapper .content fieldset, .background-wrapper .content-wrapper .content figure, .background-wrapper .content-wrapper .content form, .background-wrapper .content-wrapper .content h1, .background-wrapper .content-wrapper .content h2, .background-wrapper .content-wrapper .content h3, .background-wrapper .content-wrapper .content h4, .background-wrapper .content-wrapper .content h5, .background-wrapper .content-wrapper .content h6, .background-wrapper .content-wrapper .content hr, .background-wrapper .content-wrapper .content html, .background-wrapper .content-wrapper .content iframe, .background-wrapper .content-wrapper .content legend, .background-wrapper .content-wrapper .content li, .background-wrapper .content-wrapper .content ol, .background-wrapper .content-wrapper .content p, .background-wrapper .content-wrapper .content pre, .background-wrapper .content-wrapper .content textarea, .background-wrapper .content-wrapper .content ul {
   margin: 0 auto;
 }
 
-.bg .content .before {
+.background-wrapper .before {
   content: "";
   position: absolute;
   z-index: -1;

@@ -1,11 +1,11 @@
 /*!****************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/editor.scss ***!
   \****************************************************************************************************************************************************************************************************************************************/
-.popover-slot, .background-wrapper {
+/* .popover-slot, */
+.background-wrapper {
   border: 1px dotted #f00;
   padding: 12px;
   margin: 12px;
-  background-color: lime;
 }
 
 /* .components-notice__content{display:none;} */
@@ -29,17 +29,27 @@
   color: red;
 }
 
-.background-wrapper {
+.wp-block-un-block-background-wrapper {
+  min-height: 100vh;
   background-size: cover;
   background-position: 50% 50%;
   background-attachment: fixed;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
 }
 
 .background-wrapper-container {
+  width: 100%;
   background-color: rgba(255, 255, 255, 0.7);
-  max-width: 50%;
   margin: 0 auto;
-  padding: 0.5em 2em;
+  padding: 2em;
+  border-radius: 5px;
+  margin-bottom: 4%;
 }
 
 .pre {

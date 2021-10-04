@@ -68,6 +68,10 @@ function create_block_un_block_block_init() {
 				'type'=>'number',
 				'default'=>50
 			],
+			'contentAlignment'=>[
+				'type'=>'string',
+				'default'=>'center'
+			]
 		],
 		/*'editor_script'   => 'editor-js',
 		'editor_style'    => 'editor-css',
@@ -85,10 +89,11 @@ function un_block_background_wrapper_render_callback($attributes, $content){
 )return;
 		$image=wp_get_attachment_image_src($attributes['backgroundImage'], 'full');
 		?>
-		<div class="bg align<?= $attributes['align'] ?>" style="background-image: url('<?= esc_attr( is_array($image) && count($image)?$image[0]:'' ); ?>');">
+		<div class="background-wrapper align<?= $attributes['align'] ?>" style="background-image: url('<?= esc_attr( is_array($image) && count($image)?$image[0]:'' ); ?>');">
+
 			<div class="content-wrapper">
-				<div class="content">
-					<div class="before" style="background-image: url('<?= esc_attr( is_array($image) && count($image)?$image[0]:'' ); ?>');"></div>
+				<div class="before" style="background-image: url('<?= esc_attr( is_array($image) && count($image)?$image[0]:'' ); ?>');"></div>
+				<div class="content align<?= $attributes['contentAlignment'] ?>">
 					<?= $content ?>
 				</div>
 			</div>

@@ -47,6 +47,10 @@ export const settings = {
 		minHeight:{
 			type: 'number',
 			default: 50
+		},
+		contentAlignment:{
+			type: 'string',
+			default:'center'
 		}
 	},
 	edit:withSelect( (select, props) => {
