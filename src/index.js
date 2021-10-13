@@ -8,8 +8,14 @@
 import './style.scss';
 import { registerBlockType } from '@wordpress/blocks'
 import * as backgroundWrapper from './blocks/background-wrapper'
+import * as slider from './blocks/slider'
+import * as slide from './blocks/slide'
+import * as countryFilter from './blocks/country-filter'
 const blocks = [
 backgroundWrapper,
+slide,
+slider,
+countryFilter
 ];
 console.log(blocks,typeof blocks)
 Array.prototype.forEach.call(blocks, block => {

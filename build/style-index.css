@@ -1,6 +1,7 @@
 /*!***************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/style.scss ***!
   \***************************************************************************************************************************************************************************************************************************************/
+@charset "UTF-8";
 /**
 * The following styles get applied both on the front of your site
 * and in the editor.
@@ -66,6 +67,556 @@
   filter: blur(2.4px) brightness(0.8) contrast(0.4) grayscale(0.4) saturate(0.5) sepia(0.28);
   -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, black 10%);
   mask-image: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, black 10%);
+}
+
+/*slick-carousel*/
+/* Slider */
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+.slick-list:focus {
+  outline: none;
+}
+.slick-list.dragging {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.slick-track:before, .slick-track:after {
+  content: "";
+  display: table;
+}
+.slick-track:after {
+  clear: both;
+}
+.slick-loading .slick-track {
+  visibility: hidden;
+}
+
+.slick-slide {
+  float: left;
+  height: 100%;
+  min-height: 1px;
+  display: none;
+}
+[dir=rtl] .slick-slide {
+  float: right;
+}
+.slick-slide img {
+  display: block;
+}
+.slick-slide.slick-loading img {
+  display: none;
+}
+.slick-slide.dragging img {
+  pointer-events: none;
+}
+.slick-initialized .slick-slide {
+  display: block;
+}
+.slick-loading .slick-slide {
+  visibility: hidden;
+}
+.slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+  border: 1px solid transparent;
+}
+
+.slick-arrow.slick-hidden {
+  display: none;
+}
+
+/* Slider */
+.slick-loading .slick-list {
+  background: #fff url(images/ajax-loader.fb6f3c23.gif) center center no-repeat;
+}
+
+/* Icons */
+@font-face {
+  font-family: "slick";
+  src: url(fonts/slick.a4e97f5a.eot);
+  src: url(fonts/slick.a4e97f5a.eot?#iefix) format("embedded-opentype"), url(fonts/slick.29518378.woff) format("woff"), url(fonts/slick.c94f7671.ttf) format("truetype"), url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/Pgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxtZXRhZGF0YT5HZW5lcmF0ZWQgYnkgRm9udGFzdGljLm1lPC9tZXRhZGF0YT4KPGRlZnM+Cjxmb250IGlkPSJzbGljayIgaG9yaXotYWR2LXg9IjUxMiI+Cjxmb250LWZhY2UgZm9udC1mYW1pbHk9InNsaWNrIiB1bml0cy1wZXItZW09IjUxMiIgYXNjZW50PSI0ODAiIGRlc2NlbnQ9Ii0zMiIvPgo8bWlzc2luZy1nbHlwaCBob3Jpei1hZHYteD0iNTEyIiAvPgoKPGdseXBoIHVuaWNvZGU9IiYjODU5NDsiIGQ9Ik0yNDEgMTEzbDEzMCAxMzBjNCA0IDYgOCA2IDEzIDAgNS0yIDktNiAxM2wtMTMwIDEzMGMtMyAzLTcgNS0xMiA1LTUgMC0xMC0yLTEzLTVsLTI5LTMwYy00LTMtNi03LTYtMTIgMC01IDItMTAgNi0xM2w4Ny04OC04Ny04OGMtNC0zLTYtOC02LTEzIDAtNSAyLTkgNi0xMmwyOS0zMGMzLTMgOC01IDEzLTUgNSAwIDkgMiAxMiA1eiBtMjM0IDE0M2MwLTQwLTktNzctMjktMTEwLTIwLTM0LTQ2LTYwLTgwLTgwLTMzLTIwLTcwLTI5LTExMC0yOS00MCAwLTc3IDktMTEwIDI5LTM0IDIwLTYwIDQ2LTgwIDgwLTIwIDMzLTI5IDcwLTI5IDExMCAwIDQwIDkgNzcgMjkgMTEwIDIwIDM0IDQ2IDYwIDgwIDgwIDMzIDIwIDcwIDI5IDExMCAyOSA0MCAwIDc3LTkgMTEwLTI5IDM0LTIwIDYwLTQ2IDgwLTgwIDIwLTMzIDI5LTcwIDI5LTExMHoiLz4KPGdseXBoIHVuaWNvZGU9IiYjODU5MjsiIGQ9Ik0yOTYgMTEzbDI5IDMwYzQgMyA2IDcgNiAxMiAwIDUtMiAxMC02IDEzbC04NyA4OCA4NyA4OGM0IDMgNiA4IDYgMTMgMCA1LTIgOS02IDEybC0yOSAzMGMtMyAzLTggNS0xMyA1LTUgMC05LTItMTItNWwtMTMwLTEzMGMtNC00LTYtOC02LTEzIDAtNSAyLTkgNi0xM2wxMzAtMTMwYzMtMyA3LTUgMTItNSA1IDAgMTAgMiAxMyA1eiBtMTc5IDE0M2MwLTQwLTktNzctMjktMTEwLTIwLTM0LTQ2LTYwLTgwLTgwLTMzLTIwLTcwLTI5LTExMC0yOS00MCAwLTc3IDktMTEwIDI5LTM0IDIwLTYwIDQ2LTgwIDgwLTIwIDMzLTI5IDcwLTI5IDExMCAwIDQwIDkgNzcgMjkgMTEwIDIwIDM0IDQ2IDYwIDgwIDgwIDMzIDIwIDcwIDI5IDExMCAyOSA0MCAwIDc3LTkgMTEwLTI5IDM0LTIwIDYwLTQ2IDgwLTgwIDIwLTMzIDI5LTcwIDI5LTExMHoiLz4KPGdseXBoIHVuaWNvZGU9IiYjODIyNjsiIGQ9Ik00NzUgMjU2YzAtNDAtOS03Ny0yOS0xMTAtMjAtMzQtNDYtNjAtODAtODAtMzMtMjAtNzAtMjktMTEwLTI5LTQwIDAtNzcgOS0xMTAgMjktMzQgMjAtNjAgNDYtODAgODAtMjAgMzMtMjkgNzAtMjkgMTEwIDAgNDAgOSA3NyAyOSAxMTAgMjAgMzQgNDYgNjAgODAgODAgMzMgMjAgNzAgMjkgMTEwIDI5IDQwIDAgNzctOSAxMTAtMjkgMzQtMjAgNjAtNDYgODAtODAgMjAtMzMgMjktNzAgMjktMTEweiIvPgo8Z2x5cGggdW5pY29kZT0iJiM5NzsiIGQ9Ik00NzUgNDM5bDAtMTI4YzAtNS0xLTktNS0xMy00LTQtOC01LTEzLTVsLTEyOCAwYy04IDAtMTMgMy0xNyAxMS0zIDctMiAxNCA0IDIwbDQwIDM5Yy0yOCAyNi02MiAzOS0xMDAgMzktMjAgMC0zOS00LTU3LTExLTE4LTgtMzMtMTgtNDYtMzItMTQtMTMtMjQtMjgtMzItNDYtNy0xOC0xMS0zNy0xMS01NyAwLTIwIDQtMzkgMTEtNTcgOC0xOCAxOC0zMyAzMi00NiAxMy0xNCAyOC0yNCA0Ni0zMiAxOC03IDM3LTExIDU3LTExIDIzIDAgNDQgNSA2NCAxNSAyMCA5IDM4IDIzIDUxIDQyIDIgMSA0IDMgNyAzIDMgMCA1LTEgNy0zbDM5LTM5YzItMiAzLTMgMy02IDAtMi0xLTQtMi02LTIxLTI1LTQ2LTQ1LTc2LTU5LTI5LTE0LTYwLTIwLTkzLTIwLTMwIDAtNTggNS04NSAxNy0yNyAxMi01MSAyNy03MCA0Ny0yMCAxOS0zNSA0My00NyA3MC0xMiAyNy0xNyA1NS0xNyA4NSAwIDMwIDUgNTggMTcgODUgMTIgMjcgMjcgNTEgNDcgNzAgMTkgMjAgNDMgMzUgNzAgNDcgMjcgMTIgNTUgMTcgODUgMTcgMjggMCA1NS01IDgxLTE1IDI2LTExIDUwLTI2IDcwLTQ1bDM3IDM3YzYgNiAxMiA3IDIwIDQgOC00IDExLTkgMTEtMTd6Ii8+CjwvZm9udD48L2RlZnM+PC9zdmc+Cg==#slick) format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* Arrows */
+.slick-prev,
+.slick-next {
+  position: absolute;
+  display: block;
+  height: 20px;
+  width: 20px;
+  line-height: 0px;
+  font-size: 0px;
+  cursor: pointer;
+  background: transparent;
+  color: transparent;
+  top: 50%;
+  transform: translate(0, -50%);
+  padding: 0;
+  border: none;
+  outline: none;
+}
+.slick-prev:hover, .slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus {
+  outline: none;
+  background: transparent;
+  color: transparent;
+}
+.slick-prev:hover:before, .slick-prev:focus:before,
+.slick-next:hover:before,
+.slick-next:focus:before {
+  opacity: 1;
+}
+.slick-prev.slick-disabled:before,
+.slick-next.slick-disabled:before {
+  opacity: 0.25;
+}
+.slick-prev:before,
+.slick-next:before {
+  font-family: "slick";
+  font-size: 20px;
+  line-height: 1;
+  color: white;
+  opacity: 0.75;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.slick-prev {
+  left: -25px;
+}
+[dir=rtl] .slick-prev {
+  left: auto;
+  right: -25px;
+}
+.slick-prev:before {
+  content: "←";
+}
+[dir=rtl] .slick-prev:before {
+  content: "→";
+}
+
+.slick-next {
+  right: -25px;
+}
+[dir=rtl] .slick-next {
+  left: -25px;
+  right: auto;
+}
+.slick-next:before {
+  content: "→";
+}
+[dir=rtl] .slick-next:before {
+  content: "←";
+}
+
+/* Dots */
+.slick-dotted.slick-slider {
+  margin-bottom: 30px;
+}
+
+.slick-dots {
+  position: absolute;
+  bottom: -25px;
+  list-style: none;
+  display: block;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+.slick-dots li {
+  position: relative;
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  margin: 0 5px;
+  padding: 0;
+  cursor: pointer;
+}
+.slick-dots li button {
+  border: 0;
+  background: transparent;
+  display: block;
+  height: 20px;
+  width: 20px;
+  outline: none;
+  line-height: 0px;
+  font-size: 0px;
+  color: transparent;
+  padding: 5px;
+  cursor: pointer;
+}
+.slick-dots li button:hover, .slick-dots li button:focus {
+  outline: none;
+}
+.slick-dots li button:hover:before, .slick-dots li button:focus:before {
+  opacity: 1;
+}
+.slick-dots li button:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "•";
+  width: 20px;
+  height: 20px;
+  font-family: "slick";
+  font-size: 6px;
+  line-height: 20px;
+  text-align: center;
+  color: black;
+  opacity: 0.25;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.slick-dots li.slick-active button:before {
+  color: black;
+  opacity: 0.75;
+}
+
+/*
+.wp-block-un-block-slider{
+    position:relative;
+    min-height:50vh;
+    .wp-block-un-block-slide{
+        width:100%;
+        height:100%;
+        .item{
+            width:100%;
+            height:100%;
+            a.slick-slide-content{
+                position:absolute;
+            }
+        }
+    }
+}
+.slick-list,.slick-track,.slick-slide{min-height:100%;}
+.wp-block-un-block-slide .item{
+    position:relative;
+    width:100%;
+    height:100%;
+    a.slick-slide-content{
+        color:#000;
+        background-color: rgba(255,255,255,.85);
+        text-decoration: none;
+        max-width:80%;
+        padding:1em 2em;
+        &:focus{
+            text-decoration: none;
+            background-color: rgba(0,0,0,.4);
+        }
+        &.vertical-top {
+            top: 10%;
+            &.horizontal-left {
+                left: 10%;
+                transform: translate(-10%, -10%);
+            }
+            &.horizontal-center {
+                left: 50%;
+                transform: translate(-50%, -10%);
+            }
+            &.horizontal-right {
+                right: 10%;
+                transform: translate(10%, -10%);
+            }
+        }
+        &.vertical-middle{
+            top:50%;
+            &.horizontal-left {
+                left: 10%;
+                transform: translate(-10%, -50%);
+            }
+            &.horizontal-center {
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            &.horizontal-right {
+                right: 10%;
+                transform: translate(10%, -50%);
+            }
+        }
+        &.vertical-bottom{
+            bottom:10%;
+            &.horizontal-left {
+                left: 10%;
+                transform: translate(-10%, 10%);
+            }
+
+            &.horizontal-center {
+                left: 50%;
+                transform: translate(-50%, 10%);
+            }
+
+            &.horizontal-right {
+                right: 10%;
+                transform: translate(10%, 10%);
+            }
+        }
+        button{
+            text-transform:uppercase;
+            margin:1em 0;
+            padding:.5em 1em;
+            color:#fff;
+            background-color:#272727;
+            border:3px solid #272727;
+            border-radius:2px;
+            &:focus{
+                outline:0;
+            }
+            &:hover{
+                color:#fff;
+                background-color:#000;
+                border:3px solid #000;
+
+            }
+        }
+    }
+    }
+*/
+.slick-dotted.slick-slider {
+  margin-bottom: 60px !important;
+}
+
+ul.slick-dots {
+  bottom: -30px;
+}
+
+ul.slick-dots > li > button {
+  background: none !important;
+}
+
+.slick-dots li button:before {
+  font-size: 20px;
+}
+
+.slick-prev {
+  left: 25px;
+  z-index: 2;
+}
+
+.slick-next {
+  right: 25px;
+  z-index: 2;
+}
+
+/* button.slick-arrow:before{
+	border-radius: 50%;
+	box-shadow: 0 0 7px #000000,
+	inset 0 0px 7px #000000;
+	background: rgba(0, 0, 0, 0.9);
+} */
+.slick-list.draggable {
+  width: 100%;
+  /*min-height:inherit;*/
+}
+
+.wp-block-un-block-slide {
+  overflow: hidden;
+  position: relative;
+  z-index: 3;
+}
+.wp-block-un-block-slide > img {
+  min-height: 80vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.wp-block-un-block-slide .slide-background.landscape {
+  z-index: 1;
+  display: none;
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.wp-block-un-block-slide .slide-background.portrait {
+  z-index: 1;
+  display: none;
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (orientation: landscape) {
+  .wp-block-un-block-slide .slide-background.landscape {
+    display: block;
+  }
+}
+@media (orientation: portrait) {
+  .wp-block-un-block-slide .slide-background.portrait {
+    display: block;
+  }
+}
+.wp-block-un-block-slide .slick-slide-caption {
+  position: absolute;
+  z-index: 2;
+  -o-object-fit: cover;
+     object-fit: cover;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 30px;
+  background-color: #fff;
+  width: 80%;
+  max-width: 80%;
+}
+.wp-block-un-block-slide .slick-slide-caption.vertical-top {
+  top: 10%;
+}
+.wp-block-un-block-slide .slick-slide-caption.vertical-top.horizontal-left {
+  left: 10%;
+  transform: translate(-10%, -10%);
+}
+.wp-block-un-block-slide .slick-slide-caption.vertical-top.horizontal-center {
+  left: 50%;
+  transform: translate(-50%, -10%);
+}
+.wp-block-un-block-slide .slick-slide-caption.vertical-top.horizontal-right {
+  right: 10%;
+  transform: translate(10%, -10%);
+}
+.wp-block-un-block-slide .slick-slide-caption.vertical-middle {
+  top: 50%;
+}
+.wp-block-un-block-slide .slick-slide-caption.vertical-middle.horizontal-left {
+  left: 10%;
+  transform: translate(-10%, -50%);
+}
+.wp-block-un-block-slide .slick-slide-caption.vertical-middle.horizontal-center {
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.wp-block-un-block-slide .slick-slide-caption.vertical-middle.horizontal-right {
+  right: 10%;
+  transform: translate(10%, -50%);
+}
+.wp-block-un-block-slide .slick-slide-caption.vertical-bottom {
+  bottom: 10%;
+}
+.wp-block-un-block-slide .slick-slide-caption.vertical-bottom.horizontal-left {
+  left: 10%;
+  transform: translate(-10%, 10%);
+}
+.wp-block-un-block-slide .slick-slide-caption.vertical-bottom.horizontal-center {
+  left: 50%;
+  transform: translate(-50%, 10%);
+}
+.wp-block-un-block-slide .slick-slide-caption.vertical-bottom.horizontal-right {
+  right: 10%;
+  transform: translate(10%, 10%);
+}
+
+@media only screen and (min-width: 1024px) {
+  .wp-block-un-block-slide > img {
+    min-height: 50vh;
+  }
+
+  .wp-block-un-block-slide .slick-slide-caption {
+    max-width: 32vw;
+  }
+}
+.slick-track {
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.slick-track > * {
+  white-space: initial;
+}
+
+.slick-initialized .slick-slide {
+  display: inline-block;
+  float: none;
+}
+
+.slick-slide > div {
+  margin: 0 auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.slick-slide-caption {
+  white-space: initial;
+}
+
+button.slick-prev.slick-arrow, button.slick-next.slick-arrow {
+  background-color: transparent !important;
+}
+
+button.slick-prev.slick-arrow ~ .slick-list.draggable {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+a.wc-block-grid__product-link {
+  text-decoration: none;
+}
+
+.wc-block-grid__product-add-to-cart {
+  display: none;
+}
+
+/* .slick-prev{left:-25px;}
+.slick-next{right:-25px;} */
+.woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
+  margin: 0;
+}
+
+.wp-block-un-block-slider .wp-block-un-block-slide {
+  width: 100% !important;
+  margin: 0 !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  clear: none !important;
+}
+
+.wc-block-grid.has-multiple-rows .slick-slide > div > .wc-block-grid__product {
+  flex: 1 0 auto;
+  max-width: 100%;
+}
+
+.slick-prev:before {
+  width: 20px;
+  height: 20px;
+  content: url("data:image/svg+xml; utf8, <svg style=\"width:20px;height:20px;\" aria-hidden=\"true\" focusable=\"false\" role=\"img\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 192 512\"><path fill=\"currentColor\" d=\"M4.2 247.5L151 99.5c4.7-4.7 12.3-4.7 17 0l19.8 19.8c4.7 4.7 4.7 12.3 0 17L69.3 256l118.5 119.7c4.7 4.7 4.7 12.3 0 17L168 412.5c-4.7 4.7-12.3 4.7-17 0L4.2 264.5c-4.7-4.7-4.7-12.3 0-17z\"></path></svg>");
+}
+
+.slick-next:before {
+  content: url('data:image/svg+xml; utf8, <svg style="width:100%;height:100%;" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512"><path fill="currentColor" d="M187.8 264.5L41 412.5c-4.7 4.7-12.3 4.7-17 0L4.2 392.7c-4.7-4.7-4.7-12.3 0-17L122.7 256 4.2 136.3c-4.7-4.7-4.7-12.3 0-17L24 99.5c4.7-4.7 12.3-4.7 17 0l146.8 148c4.7 4.7 4.7 12.3 0 17z"></path></svg>');
 }
 
 /*# sourceMappingURL=style-index.css.map*/

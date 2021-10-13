@@ -38,8 +38,9 @@ function filter_block_categories_when_post_provided( $block_categories, $editor_
 add_filter( 'block_categories_all', 'filter_block_categories_when_post_provided', 10, 2 );
 
 function create_block_un_block_block_init() {
+	$dir = __DIR__;
 //exit(__DIR__);
-	register_block_type( __DIR__
+	register_block_type( $dir
 //,["render_callback" => "un_block_background_wrapper_render_callback"]
 	);
 	if(1)register_block_type('un-block/background-wrapper', [
@@ -73,6 +74,7 @@ function create_block_un_block_block_init() {
 				'default'=>'center'
 			]
 		],
+		'script'		=> 'script.js'
 		/*'editor_script'   => 'editor-js',
 		'editor_style'    => 'editor-css',
 		'script'          => 'frontend-js',
@@ -80,8 +82,26 @@ function create_block_un_block_block_init() {
 
 	]
 );
+		$style_css = 'build/style-index.css';
+	wp_register_style(
+		'un-block',
+		plugins_url( $style_css, __FILE__ ),
+		[],
+		file_exists("$dir/$style_css")?filemtime( "$dir/$style_css" ):rand()
+	);
+	$script_js = 'build/script.js';
+	wp_register_script(
+		'un-block',
+		plugins_url( $script_js, __FILE__ ),
+		['jquery'],
+		file_exists("$dir/$script_js")?filemtime( "$dir/$script_js" ):rand()
+	);
 }
 add_action( 'init', 'create_block_un_block_block_init' );
+function un_block_enqueue_scripts() {   
+    wp_enqueue_script( 'un-block');
+}
+add_action('wp_enqueue_scripts', 'un_block_enqueue_scripts');
 
 function un_block_background_wrapper_render_callback($attributes, $content){
 	if(defined('REST_REQUEST') || is_admin() || wp_doing_ajax()
