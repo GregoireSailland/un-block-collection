@@ -42,11 +42,14 @@ export default function save({attributes}) {
 		backgroundPosition:'center center',
 		'minHeight':(attributes.minHeight!='undefined'?attributes.minHeight:'100%')
 	}
-
+	let backgroundClassLandscape="slide-background landscape"+(!attributes.backgroundPortrait || !attributes.backgroundPortrait.url?' portrait':'')
+	let backgroundClassPortrait="slide-background portrait"+(!attributes.backgroundLandscape || !attributes.backgroundLandscape.url?' landscape':'')
 	return (
 		<div { ...useBlockProps.save() } /*style={backgroundStyleLandscape}*/>
-		{attributes.backgroundLandscape && attributes.backgroundLandscape.url?<img src={attributes.backgroundLandscape.url} /*srcset={attributes.backgroundLandscape.srcset}*/ class="slide-background landscape{!attributes.backgroundPortrait || attributes.backgroundPortrait.url?' portrait':''}"/>:''}
-		{attributes.backgroundPortrait && attributes.backgroundPortrait.url?<img src={attributes.backgroundPortrait.url} /*srcset={attributes.backgroundPortrait.srcset}*/ class="slide-background portrait{!attributes.backgroundLandscape || attributes.backgroundLandscape.url?' landscape':''}"/>:''}
+		<div class="slick-slide-image">
+		{attributes.backgroundLandscape && attributes.backgroundLandscape.url?<img src={attributes.backgroundLandscape.url} /*srcset={attributes.backgroundLandscape.srcset}*/ className={backgroundClassLandscape}/>:''}
+		{attributes.backgroundPortrait && attributes.backgroundPortrait.url?<img src={attributes.backgroundPortrait.url} /*srcset={attributes.backgroundPortrait.srcset}*/ className={backgroundClassPortrait}/>:''}
+		</div>
 		<div className={
 			`slick-slide-caption
 			vertical-${attributes.v}
@@ -54,6 +57,7 @@ export default function save({attributes}) {
 		} style={{background:attributes.bgColorLandscape}}>
 		<InnerBlocks.Content />
 		</div>
+
 		</div>
 		);
 }

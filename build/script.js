@@ -3120,16 +3120,18 @@ window.jQuery = window.$ = (jquery__WEBPACK_IMPORTED_MODULE_0___default());
 });*/
 
 if (true) jQuery(document).ready(function ($) {
-  $('.wp-block-un-block-slider').slick({
-    //rtl: true
-    infinite: true,
-    dots: true,
-    autoplay: true,
-    autoplaySpeed: 5000,
-    speed: 600,
-    //adaptiveHeight: true,
-    arrows: false,
-    centerPadding: '60px'
+  $('.wp-block-un-block-slider').not('.slick-initialized').each(function (index, el) {
+    $(el).slick({
+      //rtl: true
+      infinite: true,
+      dots: true,
+      autoplay: false,
+      autoplaySpeed: 5000,
+      speed: 600,
+      //adaptiveHeight: true,
+      arrows: false,
+      centerPadding: '60px'
+    });
   });
   $('.wc-block-grid.carousel > .wc-block-grid__products').not('.slick-initialized').slick({
     dots: true,

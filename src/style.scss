@@ -4,187 +4,22 @@
 *
 * Replace them with your own styles or remove the file completely.
 */
-.wp-block-create-block-un-block {
-	background-color: #21759b;
-	color: #fff;
-	padding: 2px;
-}
-.content-wrapper .content.aligncenter{
-   max-width: var(--responsive--aligndefault-width);
-}
-
-.background-wrapper{
-    position: relative;
-    //height:200vh;
-    padding-bottom:50vh;
-    background-repeat:no-repeat;
-    background-position: center center;
-    background-attachment:  fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    margin-bottom: 0!important;
-}
-.background-wrapper .content-wrapper{
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-}
-.background-wrapper .content-wrapper .content{
-    background-color: rgba(255,255,255,.7);
-    padding: 2em;
-    border-radius: 5px;
-    margin-bottom: 4%;
-}
-.background-wrapper .content-wrapper .content{
-    blockquote, dd, dl, dt, fieldset, figure, form, h1, h2, h3, h4, h5, h6, hr, html, iframe, legend, li, ol, p, pre, textarea, ul{
-        margin:0 auto;
-    }
-}
-.background-wrapper .before{
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-repeat:no-repeat;
-    background-position: center center;
-    background-attachment:  fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    filter: hue-rotate(168deg) saturate(10) grayscale(80%); /*hue-rotate(45deg);*/
-    filter: grayscale(80%);
-    filter: blur(2.4px) brightness(0.8) contrast(0.4) grayscale(0.4) saturate(0.5) sepia(0.28);
-    -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 10%);
-    mask-image: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 10%);
-}
 
 
 /*slick-carousel*/
 @import 'slick-carousel/slick/slick';
-@import 'slick-carousel/slick/slick-theme';
-/*
-.wp-block-un-block-slider{
-    position:relative;
-    min-height:50vh;
-    .wp-block-un-block-slide{
-        width:100%;
-        height:100%;
-        .item{
-            width:100%;
-            height:100%;
-            a.slick-slide-content{
-                position:absolute;
-            }
-        }
-    }
+//@import 'slick-carousel/slick/slick-theme';
+@import 'slick-theme.scss';
+
+@import 'background-wrapper.scss';
+
+@import 'slider.scss';
+//@import 'slide.scss';
+
+.wc-block-grid.has-multiple-rows .slick-slide>div>.wc-block-grid__product{
+	flex:1 0 auto;
+	max-width:100%;
 }
-.slick-list,.slick-track,.slick-slide{min-height:100%;}
-.wp-block-un-block-slide .item{
-    position:relative;
-    width:100%;
-    height:100%;
-    a.slick-slide-content{
-        color:#000;
-        background-color: rgba(255,255,255,.85);
-        text-decoration: none;
-        max-width:80%;
-        padding:1em 2em;
-        &:focus{
-            text-decoration: none;
-            background-color: rgba(0,0,0,.4);
-        }
-        &.vertical-top {
-            top: 10%;
-            &.horizontal-left {
-                left: 10%;
-                transform: translate(-10%, -10%);
-            }
-            &.horizontal-center {
-                left: 50%;
-                transform: translate(-50%, -10%);
-            }
-            &.horizontal-right {
-                right: 10%;
-                transform: translate(10%, -10%);
-            }
-        }
-        &.vertical-middle{
-            top:50%;
-            &.horizontal-left {
-                left: 10%;
-                transform: translate(-10%, -50%);
-            }
-            &.horizontal-center {
-                left: 50%;
-                transform: translate(-50%, -50%);
-            }
-            &.horizontal-right {
-                right: 10%;
-                transform: translate(10%, -50%);
-            }
-        }
-        &.vertical-bottom{
-            bottom:10%;
-            &.horizontal-left {
-                left: 10%;
-                transform: translate(-10%, 10%);
-            }
-
-            &.horizontal-center {
-                left: 50%;
-                transform: translate(-50%, 10%);
-            }
-
-            &.horizontal-right {
-                right: 10%;
-                transform: translate(10%, 10%);
-            }
-        }
-        button{
-            text-transform:uppercase;
-            margin:1em 0;
-            padding:.5em 1em;
-            color:#fff;
-            background-color:#272727;
-            border:3px solid #272727;
-            border-radius:2px;
-            &:focus{
-                outline:0;
-            }
-            &:hover{
-                color:#fff;
-                background-color:#000;
-                border:3px solid #000;
-
-            }
-        }
-    }
-    }
-*/
-    @import 'front.scss';
-    .wp-block-un-block-slider .wp-block-un-block-slide{width:100% !important;margin:0 !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-        clear:none !important;
-    }
-    .wc-block-grid.has-multiple-rows .slick-slide>div>.wc-block-grid__product{
-        flex:1 0 auto;
-        max-width:100%;
-    }
 
 
-.slick-prev:before{
-    width:20px;height:20px;
-    content: url('data:image/svg+xml; utf8, <svg style="width:20px;height:20px;" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512"><path fill="currentColor" d="M4.2 247.5L151 99.5c4.7-4.7 12.3-4.7 17 0l19.8 19.8c4.7 4.7 4.7 12.3 0 17L69.3 256l118.5 119.7c4.7 4.7 4.7 12.3 0 17L168 412.5c-4.7 4.7-12.3 4.7-17 0L4.2 264.5c-4.7-4.7-4.7-12.3 0-17z"></path></svg>');
-}
-.slick-next:before{
-    content: url('data:image/svg+xml; utf8, <svg style="width:100%;height:100%;" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512"><path fill="currentColor" d="M187.8 264.5L41 412.5c-4.7 4.7-12.3 4.7-17 0L4.2 392.7c-4.7-4.7-4.7-12.3 0-17L122.7 256 4.2 136.3c-4.7-4.7-4.7-12.3 0-17L24 99.5c4.7-4.7 12.3-4.7 17 0l146.8 148c4.7 4.7 4.7 12.3 0 17z"></path></svg>');
-}
+//@import 'front.scss';

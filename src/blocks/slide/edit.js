@@ -22,7 +22,7 @@ export default function Edit(props){
 	let backgroundLandscape
 	if(props.attributes.backgroundLandscape)backgroundLandscape = props.attributes.backgroundLandscape.url
 		let backgroundStyleLandscape
-	backgroundStyleLandscape = {}
+	backgroundStyleLandscape = {alignSelf: 'stretch'}
 	if(backgroundLandscape && backgroundLandscape.trim()!='')backgroundStyleLandscape={
 		backgroundImage:`url(${backgroundLandscape})`,
 		backgroundSize:'cover',
@@ -33,7 +33,7 @@ export default function Edit(props){
 	let backgroundPortrait
 	if(props.attributes.backgroundPortrait)backgroundPortrait = props.attributes.backgroundPortrait.url
 		let backgroundStylePortrait
-	backgroundStylePortrait = {}
+	backgroundStylePortrait = {alignSelf: 'stretch'}
 	if(backgroundPortrait && backgroundPortrait.trim()!='')backgroundStylePortrait={
 		backgroundImage:`url(${backgroundPortrait})`,
 		backgroundSize:'cover',
@@ -41,33 +41,36 @@ export default function Edit(props){
 		alignSelf: 'stretch'
 	}
 
-	return ([
-		<InspectorControls key="1">
-		<PanelBody title={ __( 'Slideshow' ) }>
-		<Fragment key={'attributes'}>
-		</Fragment>
-		</PanelBody>
-		</InspectorControls>
-		,
-		<div { ...blockProps } class={blockProps.className} style={backgroundStyleLandscape}>
-		<div className={
-			`slick-slide-caption-editor
-			vertical-${props.attributes.v}
-			horizontal-${ props.attributes.h}`
-		} style={{background:props.attributes.bgColorLandscape}}>
-		<InnerBlocks /* allowedBlocks={['core/paragraph','core/heading']}*/
-		/>
-		</div>
-		<Flex style={{flexWrap:'wrap'}}>
+	return (
+		[(
+			<InspectorControls key="1">
+			<PanelBody title={ __( 'Slideshow' ) }>
+			<Fragment key={'attributes'}>
+			</Fragment>
+			</PanelBody>
+			</InspectorControls>)
+			,(
+			<div { ...blockProps }>
+			<div style={backgroundStyleLandscape} class="un-block-content-container">
+			<div className={
+				`un-block-content
+				vertical-${props.attributes.v}
+				horizontal-${ props.attributes.h}`
+			} style={{background:props.attributes.bgColorLandscape}}>
+			<InnerBlocks /* allowedBlocks={['core/paragraph','core/heading']}*/
+			/>
+			</div>
+			</div>
+			<Flex style={{flexWrap:'wrap'}}>
 
-		<FlexItem style={backgroundStyleLandscape}>
+			<FlexItem style={backgroundStyleLandscape}>
 
-		<MediaUpload onSelect={ (newImage) => handleSlideProp( newImage,'backgroundLandscape' ) } type="image" value={ props.attributes.backgroundLandscape } render={ ( { open } ) => (<Button	className="editor-media-placeholder__button is-button is-default is-large" icon="upload" onClick={ open } >Background Landscape</Button>)}/>
+			<MediaUpload onSelect={ (newImage) => handleSlideProp( newImage,'backgroundLandscape' ) } type="image" value={ props.attributes.backgroundLandscape } render={ ( { open } ) => (<Button	className="editor-media-placeholder__button is-button is-default is-large" icon="upload" onClick={ open } >Background Landscape</Button>)}/>
 
 			<Dropdown className="components-color-palette__item-wrapper components-color-palette__custom-color" contentClassName="components-color-palette__picker"
 			renderToggle={ ( { isOpen, onToggle } ) => (
-				<Tooltip text={ 'color' }><button type="button" aria-expanded={ isOpen } className="components-color-palette__item"	onClick={ onToggle } aria-label={ 'color' } style={{backgroundColor:props.attributes.bgColorLandscape}}></button></Tooltip>
-				)}
+			<Tooltip text={ 'color' }><button type="button" aria-expanded={ isOpen } className="components-color-palette__item"	onClick={ onToggle } aria-label={ 'color' } style={{backgroundColor:props.attributes.bgColorLandscape}}></button></Tooltip>
+			)}
 			renderContent={ () => (
 				<div>
 				<ColorPalette
@@ -96,8 +99,8 @@ export default function Edit(props){
 
 				<Dropdown className="components-color-palette__item-wrapper components-color-palette__custom-color" contentClassName="components-color-palette__picker"
 				renderToggle={ ( { isOpen, onToggle } ) => (
-					<Tooltip text={ 'color' }><button type="button" aria-expanded={ isOpen } className="components-color-palette__item"	onClick={ onToggle } aria-label={ 'color' } style={{backgroundColor:props.attributes.bgColorPortrait}}></button></Tooltip>
-					)}
+				<Tooltip text={ 'color' }><button type="button" aria-expanded={ isOpen } className="components-color-palette__item"	onClick={ onToggle } aria-label={ 'color' } style={{backgroundColor:props.attributes.bgColorPortrait}}></button></Tooltip>
+				)}
 				renderContent={ () => (
 					<div>
 					<ColorPalette
@@ -152,12 +155,7 @@ export default function Edit(props){
 					</FlexBlock>
 					</Flex>
 					</div>
-					])
-			}
-			/*
-			<pre>
-			{JSON.stringify(props.attributes)}
-			{JSON.stringify(props.attributes.backgroundLandscape?props.attributes.backgroundLandscape.url:'')}
-			</pre>
-			disableAlpha
-			*/
+					)
+					]
+					)
+				}

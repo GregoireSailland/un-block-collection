@@ -37,3 +37,36 @@
 }
 .pre{max-height:30vh;overflow:auto;}
 .edit-post-visual-editor .background-wrapper>.components-button.has-icon{background-color:#fff;}
+
+
+.wp-block-un-block-slide{
+	border:5px solid #555;
+}
+
+.wp-block{
+	.wp-block-un-block-slide{
+
+		select{padding:0 10px;}
+		button.components-color-palette__item{padding:1em;border:1px solid #000;border-radius: 3px;}
+		.un-block-content-container{
+			.un-block-content{
+				max-width:80%;
+				max-height:80%;
+
+				&.vertical-top{margin-top:0%;margin-bottom:20%;}
+				&.vertical-middle{margin-top:10%;margin-bottom:10%;}
+				&.vertical-bottom{margin-top:20%;margin-bottom:0%;}
+
+				&.horizontal-left{margin-left:0%;margin-right:20%;}
+				&.horizontal-center{margin-left:10%;margin-right:10%;}
+				&.horizontal-right{margin-left:20%;margin-right:0%;}
+
+
+				.wp-block-buttons>.wp-block.wp-block-button{
+					margin-top: 0;margin-bottom: 0;
+				}
+			}
+		}
+	}
+	
+}
